@@ -29,3 +29,10 @@ def histogram(source_text):
 
     for word in dict:
         print(f'{word} = {dict[word]}')
+
+    unique_words(dict)
+
+
+def unique_words(dict):
+    #unique words = length of the dictionary
+    print(f'Unique words: {len(dict)}')
