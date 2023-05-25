@@ -32,7 +32,19 @@ def histogram(source_text):
 
     unique_words(dict)
 
+    frequency('good', dict) # this will test the frequency function with a given word NOT in the dictionary.
+
 
 def unique_words(dict):
     #unique words = length of the dictionary
     print(f'Unique words: {len(dict)}')
+
+def frequency(word, dict):
+    #frequency of a word = value of the key
+    if word in dict:
+        print(f'Frequency of {word}: {dict[word]}')
+    else:
+        print(f'The word "{word}" does not exist in the dictionary.')
+
+if __name__ == "__main__":
+    histogram('text.txt')
