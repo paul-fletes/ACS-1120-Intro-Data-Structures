@@ -47,4 +47,4 @@ def frequency(word, dict):
         print(f'The word "{word}" does not exist in the dictionary.')
 
 if __name__ == "__main__":
-    histogram('text.txt')
+    histogram('tgg.txt')
