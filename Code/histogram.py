@@ -2,7 +2,7 @@ import random
 import sys, random
 from string import punctuation
 
-class histo_word:
+class histogram:
     def __init__(self, word, count):
         self.word = word
         self.count = count
