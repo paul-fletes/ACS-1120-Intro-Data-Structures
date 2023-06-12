@@ -1,5 +1,5 @@
 #to run type: pytest test_dictogram.py
-from dictogram import Dictogram
+from Code.dictogram import Dictogram
 
 # known inputs and their expected results
 fish_words = ['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish']

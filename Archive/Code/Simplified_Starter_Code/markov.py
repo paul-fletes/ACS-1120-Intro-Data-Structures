@@ -1,4 +1,4 @@
-from dictogram import Dictogram
+from Code.dictogram import Dictogram
 
 class MarkovChain:
 
