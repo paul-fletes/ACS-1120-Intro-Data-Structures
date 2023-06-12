@@ -40,5 +40,5 @@ class Histogram:
       sentence += word + " "
     return sentence
   
-histogram = Histogram('text.txt')
+histogram = Histogram('./data/tgg.txt')
 histogram._generate_random_sentence()
