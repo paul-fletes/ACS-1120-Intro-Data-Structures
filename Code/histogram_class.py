@@ -3,12 +3,11 @@ import string
 
 class Histogram: 
   def __init__(self, source_text):
-    self.source_text = source_text
-    self.histogram = self._generate_histogram()
+    self.histogram = self._generate_histogram(source_text)
 
-  def _generate_histogram(self):
+  def _generate_histogram(self, source_text):
     histogram = {}
-    with open(self.source_text, 'r') as file:
+    with open(source_text, 'r') as file:
 
         word_list = file.read()
         translated_text = word_list.translate(str.maketrans('', '', string.punctuation)).lower()
