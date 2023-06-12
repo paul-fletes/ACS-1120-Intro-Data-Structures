@@ -44,12 +44,13 @@ class Sampling:
 	def collect_stats(self):
 		random_words_histogram = {}
 		for x in range(self.number_of_runs):
-			self.random_words.append(self._generate_random_word())
-			for word in self.random_words:
-				if word in random_words_histogram.keys():
-					random_words_histogram[word] += 1
-				else:
-					random_words_histogram[word] = 1
+			new_word = self._generate_random_word()
+			self.random_words.append(new_word)
+		for word in self.random_words:
+			if word in random_words_histogram.keys():
+				random_words_histogram[word] += 1
+			else:
+				random_words_histogram[word] = 1
 		return random_words_histogram
 		
 	def print_frequency(self):
