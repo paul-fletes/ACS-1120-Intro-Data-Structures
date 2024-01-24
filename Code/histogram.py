@@ -50,6 +50,9 @@ if __name__ == "__main__":
 
   # Sample a random word if the -r flag is provided
     if args.random:
+        # # Sample weights
+        # word_weights = {'water': 10, 'red': 40, 'the': 20}
+        # add 'weights=word_weights' to add custom weigting!
         sampled_word = random_word(word_histogram)
         print("\nSampled Random Word:", sampled_word)
     else:
