@@ -52,4 +52,4 @@ if __name__ == "__main__":
     # print_full_histogram(word_histogram)
 
     print("\nFull Histogram:")
-    print_full_histogram(word_histogram, sort_by=args.sort)
+    print_full_histogram(word_histogram, sort_by=args.sort) # python3 histogram.py <source> -s <num | alpha>
