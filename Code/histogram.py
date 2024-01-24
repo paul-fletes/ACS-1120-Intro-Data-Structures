@@ -50,7 +50,9 @@ if __name__ == "__main__":
 
   # Sample a random word if the -r flag is provided
     if args.random:
-        sampled_word = random_word(word_histogram)
+        # Sample weights
+        word_weights = {'water': 10, 'red': 40, 'the': 20}
+        sampled_word = random_word(word_histogram, weights=word_weights)
         print("\nSampled Random Word:", sampled_word)
     else:
     # Print the full histogram with sorting if -r flag is not provided
