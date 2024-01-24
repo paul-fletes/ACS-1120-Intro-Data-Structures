@@ -1,6 +1,7 @@
 import re
 from collections import Counter
 import argparse
+import random
 
 def read_source_text(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
@@ -21,16 +22,23 @@ def print_full_histogram(histogram, sort_by=None):
     if sort_by == 'num':
       sorted_histogram = sorted(histogram.items(), key=lambda x: x[1], reverse=True)
     else:
-      sorted_histogram = sorted(histogram.items())
+      sorted_histogram = sorted(histogram.items(), key=lambda x: x[0])
 
     for word, count in sorted_histogram:
         print(f"{word}: {count}")
 
+def random_word(histogram):
+    all_words = list(histogram.keys())
+    selected_word = random.choice(all_words)
+    return selected_word
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate a word histogram from a source text.")
+    parser = argparse.ArgumentParser(description="Generate a word histogram from a source tex and sample random words.")
     parser.add_argument("source_text", help="Path to the source text file.")
     parser.add_argument("-s", "--sort", choices=["num", "alpha"], default=None,
                         help="Sort the histogram. 'numeric' for numeric sort, 'alpha' for alphabetical sort.")
+    parser.add_argument("-r", "--random", action="store_true",
+                        help="Sample a random word from the histogram.")
     args = parser.parse_args()
 
     # Read source text
@@ -43,13 +51,13 @@ if __name__ == "__main__":
     print("Total Unique Words:", unique_words(word_histogram))
     print("Frequency of 'water':", frequency('water', word_histogram))
 
-    # Print full histogram sorted by count:
-    # print("\nFull Histogram (sorted by count):")
-    # print_full_histogram(word_histogram, sort_by='count')
+    # python3 histogram.py <source> -s <num | alpha>
 
-    # Print full histogram sorted alphabetically:
-    # print("\nFull Histogram (sorted alphabetically):")
-    # print_full_histogram(word_histogram)
-
-    print("\nFull Histogram:")
-    print_full_histogram(word_histogram, sort_by=args.sort) # python3 histogram.py <source> -s <num | alpha>
+  # Sample a random word if the -r flag is provided
+    if args.random:
+        sampled_word = random_word(word_histogram)
+        print("\nSampled Random Word:", sampled_word)
+    else:
+    # Print the full histogram with sorting if -r flag is not provided
+        print("\nFull Histogram:")
+        print_full_histogram(word_histogram, sort_by=args.sort)
