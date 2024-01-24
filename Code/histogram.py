@@ -1,7 +1,7 @@
 import re
 from collections import Counter
 import argparse
-import random
+from sample import random_word
 
 def read_source_text(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
@@ -26,11 +26,6 @@ def print_full_histogram(histogram, sort_by=None):
 
     for word, count in sorted_histogram:
         print(f"{word}: {count}")
-
-def random_word(histogram):
-    all_words = list(histogram.keys())
-    selected_word = random.choice(all_words)
-    return selected_word
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate a word histogram from a source tex and sample random words.")
