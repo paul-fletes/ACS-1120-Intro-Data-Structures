@@ -54,6 +54,7 @@ if __name__ == "__main__":
         # word_weights = {'water': 10, 'red': 40, 'the': 20}
         # add 'weights=word_weights' to add custom weigting!
         sampled_word = random_word(word_histogram)
+
         print("\nSampled Random Word:", sampled_word)
     else:
     # Print the full histogram with sorting if -r flag is not provided
