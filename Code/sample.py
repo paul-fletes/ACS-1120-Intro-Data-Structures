@@ -12,5 +12,5 @@ def random_word(histogram, weights=None):
     if weighted_words:
         selected_word = random.choice(weighted_words)
         return selected_word
-    else:
-        return None
+    return None
+    
