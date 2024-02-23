@@ -84,7 +84,7 @@ class LinkedList:
         if self.tail is None:
             self.tail = new_node
 
-    def find(self, matcher):
+    def find(self, value):
         """Return an item from this linked list if it is present.
         Best case running time: O(???) Why and under what conditions?
         Worst case running time: O(???) Why and under what conditions?"""
@@ -92,7 +92,7 @@ class LinkedList:
         node = self.head
 
         while node is not None:
-            if matcher(node.data):
+            if node.data == value:
                 return node.data
             node = node.next
 
