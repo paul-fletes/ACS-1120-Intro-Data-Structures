@@ -1,0 +1,75 @@
+body {
+  background-image: url('https://images.unsplash.com/photo-1601255596436-3d600117f19e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-repeat: no-repeat;
+  font-family: 'Fahkwang', sans-serif;
+  color: #fff;
+  text-align: center;
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 48px;
+  color: #0d00ffa9;
+  text-shadow: 2px 2px 4px rgba(240, 255, 244, 0.909);
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 4px;
+  word-wrap: break-word;
+}
+
+@media screen and (max-width: 600px) {
+  p {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.text {
+  margin-bottom: 30px;
+  background-color: rgba(80, 146, 145, 0.8);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.button-container {
+  margin-top: 30px;
+}
+
+button {
+  background-color: #3c8f05;
+  color: #fff;
+  font-size: 18px;
+  font-family: 'Fahkwang', sans-serif;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-shadow: 2px 2px 4px rgba(172, 223, 186, 0.7);
+}
+
+button:hover {
+  background-color: #006400;
+}

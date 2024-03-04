@@ -1,6 +1,7 @@
 """Main script, uses other modules to generate sentences."""
 from flask import Flask, render_template
 from histogram import histogram, random_word, read_source_text
+from markov import MarkovChain
 
 
 app = Flask(__name__)
@@ -14,9 +15,10 @@ word_histogram = histogram(source_text)
 @app.route("/")
 def home():
     """Route that returns a web page containing the generated text."""
-    # Sample a random word from the histogram
-    sampled_word = random_word(word_histogram)
-    return render_template('index.html', word=sampled_word)
+    with open('data/source_text.txt', 'r') as file:
+        word_list = file.read().split()
+    markov = MarkovChain(word_list=word_list).generate_sentence(max_words=20)
+    return render_template('index.html', markov=markov)
 
 
 if __name__ == "__main__":
